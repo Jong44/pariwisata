@@ -12,18 +12,20 @@ export default {
 <template>
     <nav class="absolute top-0 right-0 left-0 z-10 flex justify-between items-end py-10 px-20 text-white">
         <Logo/>
-        <div class="flex gap-5 items-center text-lg">
-            <p>Beranda</p>
+        <div class="flex gap-8 items-center text-lg">
+            <router-link to="/">Beranda</router-link>
             <Circle/>
-            <p>Destinasi</p>
+            <router-link to="/destinasi">Destinasi</router-link>
             <Circle/>
-            <p>Inspirasi</p>
+            <router-link to="/a">Inspirasi</router-link>
             <Circle/>
-            <p>Sejarah</p>
+            <router-link to="/b">Sejarah</router-link>
         </div>
         <div class="flex items-center gap-4">
             <p>ID</p>
             <i class="iconsax" icon-name="globe"></i>
         </div>
+        <p>|</p>
+        <i class="iconsax" icon-name="search-normal-2"></i>
     </nav>
 </template>

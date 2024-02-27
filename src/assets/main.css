@@ -56,3 +56,22 @@
 .article:hover .read_more{
     opacity: 1;
 }
+
+.router-link-active{
+    color: #E1AC5D;
+    font-weight: 500;
+}
+
+.radius-custom{
+    border-radius: 80px 0 0 50px;
+    
+}
+
+.radius-customs{
+    border-radius: 70px 0 0 40px;
+}
+
+.border-custom{
+    border-left: #E1AC5D 10px solid;
+    border-bottom: #E1AC5D 10px solid;
+}
