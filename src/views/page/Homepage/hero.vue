@@ -1,5 +1,5 @@
 <template>
-    <section class="gradient relative top-0 w-full bg-red-600 px-20 py-40">
+    <section class="gradient relative top-0 w-full bg-red-600 px-20 py-44">
       <div class="w-[46rem] ">
         <p class=" font-bold text-2xl">Welcome to</p>
         <h1 class=" font-extrabold text-[96px]">LOREM IPSUM</h1>

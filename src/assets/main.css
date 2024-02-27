@@ -22,10 +22,37 @@
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-.slider {
-    transition: transform 0.5s ease;
-  }
+.slide{
+    transition: transform 0.3s ease;
+}
 
-  .slide {
-    flex: 0 0 auto;
-  }
+.slide:hover {
+    transform: scale(1.1,1.1);
+}
+
+.text-more{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article{
+    height: 22rem;
+    transition: transform 0.3s ease;
+}
+
+.article:hover{
+    height: 23rem;
+    transform: scale(1.1,1.1);
+}
+
+.article .read_more{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.article:hover .read_more{
+    opacity: 1;
+}

@@ -2,23 +2,28 @@
 import {defineComponent, ref} from 'vue';
 import Hero from './hero.vue'
 import CardDestination from '@/components/cardDestination.vue'
+import CardArticle from '@/components/cardArticle.vue';
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useSwiper } from 'swiper/vue';
 import 'swiper/css';
 import { Navigation  } from 'swiper/modules';
 
-import data from '@/assets/data.json'
+import data from '@/assets/data.json';
+import dataArticle from '@/assets/data_article.json'
 
 
 export default {
     data() {
         return {
-            data: data
+            data: data,
+            article: dataArticle
         }
     },
     components:{
         Hero,
         CardDestination,
+        CardArticle,
         Swiper,
         SwiperSlide
 
@@ -78,7 +83,7 @@ export default {
                 <div class="h-[22px] w-40 bg-primary_greeen"></div>
             </div>
         </section>
-        <section class="px-20 py-12">
+        <section class="px-20 py-20">
             <div class="flex justify-between items-center">
                 <div class="text-lg">
                     <p class="text-2xl font-bold text-primary_greeen">Top Destinations</p>
@@ -100,14 +105,60 @@ export default {
                         :loop="true"
                         :modules="[Navigation]"
                         @swiper="onSwiper">
-                    <swiper-slide v-for="(item, index) in data" :key="index">
+                    <swiper-slide v-for="(item, index) in data" :key="index" class="p-5">
                         <CardDestination :title="item.title" :image="item.image" :province="item.province" :city="item.city" :price="item.price"/>
                     </swiper-slide>
                 </swiper>
             </div>
+            <div class="flex items-end gap-24 mt-32">
+                <div class="w-1/2 h-[25rem] bg-primary_greeen rounded-3xl">
+                    <img src="@/assets/bg_card.png" alt="" class="w-full h-full object-fill object-center ">
+                </div>
+                <div class="w-1/2">
+                    <p class="font-semibold text-2xl mb-5">Inspirasi Perjalanan Anda Melihat Pesona Keindahan Alam di Jawa Tengah</p>
+                    <p class="mb-10">Jawa Tengah memiliki keberagaman wisata alam, budaya, hingga kuliner yang menggoda. Ramah tamah warga lokal yang membuat wisatawan nyaman dan merasa di kampung halaman juga semakin indah ketika unsur adat istiadat tradisional yang masih autentik dikenalkan. Selain itu, kekayaan flora serta fauna langka nan memesona pun tak kalah seru untuk menambah daftar pengalaman terbaik yang bisa dirasakan saat menjelajahi Indonesia. Semua keindahan ini cuma bisa ditemukan</p>
+                </div>
+            </div>
         </section>
-        <section>
-           
+        <section class="px-20 py-16 gradient">
+           <p class="font-bold text-4xl text-center">Solusi Cepat untuk Pemesanan <br/> Perjalanan</p>
+           <div class="flex gap-44 mt-20">
+                <div class="w-1/2">
+                    <p class="font-semibold text-2xl">Lorem ipsum dolor sit amet consectetur. Mauris aliquet tellus ut amet neque dignissim. </p>
+                    <p class="text-[#d9d9d9] text-xl mt-2">Lorem ipsum dolor sit amet consectetur. Non nulla suspendisse blandit rutrum dui sed morbi quam vestibulum. Leo purus morbi elementum nisi diam cursus sit nibh. Turpis sed quis eget molestie. Semper quis at leo nisl orci id habitasse ultrices. Nibh mauris lectus proin tincidunt amet massa eleifend ac laoreet. </p>
+                    <div class="flex items-center gap-2 mt-5 font-bold text-primary_yellow">
+                        <p>Read More</p>
+                        <i class="iconsax text-xl " icon-name="arrow-right"></i>
+                    </div>
+                    <div class="flex gap-12 mt-20">
+                        <div class="font-bold text-white">
+                            <p class="text-5xl">100+</p>
+                            <p class="text-xl">Artikel</p>
+                        </div>
+                        <div class="font-bold text-white">
+                            <p class="text-5xl">50+</p>
+                            <p class="text-xl">User</p>
+                        </div>
+                        <div class="font-bold text-white">
+                            <p class="text-5xl">20+</p>
+                            <p class="text-xl">Destinasi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-1/2 h-[25rem] bg-primary_greeen rounded-3xl">
+                    <img src="@/assets/bg_card2.png" alt="" class="w-full h-full object-cover rounded-3xl object-center ">
+                </div>
+           </div>
+        </section>
+        <section class="px-20 py-16 h-[40rem]">
+            <p class="font-bold text-3xl w-[35rem]">
+                Pilihan Artikel Budaya dan Sejarah Untuk Anda Baca
+            </p>
+            <div class="flex justify-between mt-10">
+                <div class="" v-for="(item, index) in article" :key="index">
+                    <CardArticle :title="item.title" :image="item.image" :description="item.description"/>
+                </div>
+            </div>
         </section>
     </main>
 </template>
