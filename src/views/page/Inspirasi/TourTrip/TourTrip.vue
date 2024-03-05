@@ -1,15 +1,60 @@
 <script>
 import CardTour from '@/components/cardTour.vue'
 import ListArticleByCategory from '@/components/listArticleByCategory.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { useSwiper } from 'swiper/vue';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
+import { defineComponent, ref } from 'vue';
+
 
 export default {
     components: {
         CardTour,
-        ListArticleByCategory
+        ListArticleByCategory,
+        Swiper,
+        SwiperSlide
+    },
+    setup() {
+
+        const swiperInstance = ref()
+
+        function onSwiper(swiper) {
+            swiperInstance.value = swiper
+        }
+        const swiperNextSlide = () => {
+            swiperInstance.value.slideNext()
+        };
+        const swiperPrevSlide = () => {
+            swiperInstance.value.slidePrev()
+        };
+        return {
+            swiperPrevSlide,
+            swiperNextSlide,
+            onSwiper,
+        };
+    },
+    methods: {
+        Navigation() {
+            return Navigation
+        },
     },
     data() {
         return {
-            indexCatergory: 0
+            indexCatergory: 0,
+            activeIndex: 0,
+            imageData: [
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fawan-aR_sT7qaQKM-unsplash.jpg?alt=media&token=b5a69389-39e1-4f19-8b83-4aeb1a7b3db6',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Falea-film-2lZlBv-TQI4-unsplash.jpg?alt=media&token=05ee63bf-8120-4f7c-b9e7-75689d9be631',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fyulia-agnis-JXUJ88V8el8-unsplash.jpg?alt=media&token=e7a3f587-cd2c-4fa3-8b74-90a793a90a29',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Ftriadi-yusuf-qjVjjynm0C4-unsplash.jpg?alt=media&token=65d8a219-e640-4f87-a3be-1a72e81d47bc'
+            ],
+            titleData: [
+                'Kawah Sikidang',
+                'Candi Borobudur',
+                'Brown Canyon',
+                'Lawang Sewu'
+            ]
         }
     },
 }
@@ -18,23 +63,27 @@ export default {
 <template>
     <main>
         <section class="py-44">
-            <p class="font-bold text-3xl text-center">
-                Tentukan Rencana Perjalanan Kamu Untuk <br />Healing dan Refreshing
+            <p class="font-bold text-3xl text-center max-sm:text-xl max-sm:px-3">
+                Tentukan Rencana Perjalanan Kamu Untuk <br class="max-sm:hidden"/>Healing dan Refreshing
             </p>
-            <div class="h-[25rem] bg-primary_grey mt-12 flex flex-col justify-center items-center text-center">
-                <p class="text-6xl">Selamat Datang di <span class="font-bold">Merapi Trip</span></p>
-                <p class="mt-5 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facere
-                    repellendus dolorem. <br /> Eius voluptatem placeat expedita quibusdam, </p>
+            <div class="relative h-[25rem] bg-primary_grey mt-12 flex flex-col justify-center items-center text-center text-white bg-center bg-no-repeat bg-cover" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2F60e62e9f-1941-4726-96a1-befa6c8fb547-1642664913585-fbf10d9d60a8d1a82b4de3edc5b6ee95.webp?alt=media&token=ebea5c43-fc3e-4dca-8891-36d839c14bdb');">
+                <div class="absolute inset-0 bg-black opacity-[0.3]"></div>
+                <div class="absolute">
+                    <p class="text-6xl max-sm:text-3xl">Selamat Datang di <span class="font-bold">Merapi Trip</span></p>
+                    <p class="mt-5 text-base max-sm:text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam facere
+                        repellendus dolorem. <br class="max-sm:hidden" /> Eius voluptatem placeat expedita quibusdam, </p>
+                </div>
             </div>
-            <div class="px-20 py-10 flex gap-32">
-                <div class="w-2/3">
+            <div class="px-20 py-10 flex gap-32 max-lg:px-10 max-lg:flex-col">
+                <div class="w-2/3 max-lg:w-auto">
                     <p class="text-2xl font-bold">Tour dan Travel</p>
                     <div class="mt-10">
-                        <CardTour sizeText="30" title="Keindahan Pesona Jawa Tengah Yang Wajib di Kunjungi"
+                        <CardTour sizeText="30" title="Open Trip Wisata Liburan Karimun Jaya"
+                        description="Paket wisata liburan di pulau karimun jawa, dengan harga ramah dikantong. Liburan ini..."
                             image="https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/article%2Feugenia-clara-_QTeGT478_8-unsplash.jpg?alt=media&token=b903d953-c78c-4d32-a502-ed45658dfb30" />
                     </div>
                 </div>
-                <div class="w-[40%]">
+                <div class="w-[40%] max-lg:w-auto">
                     <div class="">
                         <div class="bg-primary_grey rounded-full">
                             <div class="flex text-gray-500">
@@ -60,11 +109,115 @@ export default {
                 </div>
             </div>
         </section>
-        <section class="px-20 py-10 flex">
-            <div class="w-1/3">
-                <p class="font-bold text-3xl">Pesan Trip Kamu Hanya dengan 3 Cara</p>
-                
+        <section class="px-20 py-10 flex max-lg:flex-col max-lg:px-10">
+            <div class="w-[40%] max-lg:w-auto">
+                <p class="font-bold text-3xl">Pesan Trip Kamu Hanya <br />dengan 3 Cara</p>
+                <div class="mt-10 flex flex-col gap-10">
+                    <div class="flex gap-7 max-lg:gap-5">
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
+
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-bold">Pilih Destinasi</p>
+                            <p class="max-lg:text-xs">Setelah menemukan wisata terbaik kamu, Siapkan pembayaranmu dan bersiap untuk
+                                berwisata</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-7 max-lg:gap-5">
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
+
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-bold">Pilih Destinasi</p>
+                            <p class="max-lg:text-xs">Setelah menemukan wisata terbaik kamu, Siapkan pembayaranmu dan bersiap untuk
+                                berwisata</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-7 max-lg:gap-5">
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
+
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-bold">Pilih Destinasi</p>
+                            <p class="max-lg:text-xs">Setelah menemukan wisata terbaik kamu, Siapkan pembayaranmu dan bersiap untuk
+                                berwisata</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="w-[60%]"></div>
+        </section>
+        <section class="relative py-44 bg-primary_grey bg-center bg-cover bg-no-repeat text-white" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fandri-hermawan-mZjSvUtky1A-unsplash.jpg?alt=media&token=1adf7d20-a80b-450a-9da8-01b7a4fafe90');">
+            <div class="absolute inset-0 bg-black opacity-[0.2]"></div>
+            <div class="absolute inset-0 flex flex-col justify-center items-center ">
+                <p class="font-bold text-3xl z-10">Gunung Prau</p>
+                <p class="mt-5 text-base w-[32rem] text-center max-lg:w-auto">Gunung Parahu adalah salah satu gunung di Dataran Tinggi
+                    Dieng, Jawa Tengah, Indonesia memiliki ketinggian puncak 2.590 mdpl</p>
+            </div>
+        </section>
+        <section class="px-20 py-20 max-lg:px-10">
+            <p class="text-center font-bold text-3xl max-lg:text-xl">
+                Rekomendasi Wisata Populer <br /> di Jawa Tengah Terkini
+            </p>
+            <div class="mt-10">
+                <swiper ref="swiperRef" :breakpoints="{ 
+                    320: {
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                        },
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        800: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        900: { slidesPerView: 3, }
+                 }"
+                    :loop="true" :modules="[Navigation]" @swiper="onSwiper" centeredSlides  >
+                    <swiper-slide v-for="(item, index) in 4" :key="index" class="p-5">
+                        <div class="flex justify-center items-end p-10  shadow_custom bg-primary_grey h-[30rem] w-[26rem] max-lg:w-[16rem] rounded-3xl bg-center bg-cover bg-no-repeat" :style="{backgroundImage: 'url('+ imageData[index] +' )'}">
+                            <p class="text-white text-xl font-semibold">{{ titleData[index] }}</p>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
+            <div class="flex justify-center gap-5 my-5">
+                    <div class=" bg-primary_greeen font-bold px-3 py-1 rounded-full" @click="swiperPrevSlide">
+                        <i class="iconsax text-xl text-white" icon-name="arrow-left"></i>
+                    </div>
+                    <div class=" bg-primary_greeen font-bold px-3 py-1 rounded-full" @click="swiperNextSlide">
+                        <i class="iconsax text-xl text-white" icon-name="arrow-right"></i>
+                    </div>
+                </div>
         </section>
     </main>
 </template>
+
+<style scoped>
+.swiper-slide{
+    transition: all .3s ease;
+    padding: 5rem  0;
+}
+
+.swiper-slide-active {
+    transform: scale(1.25);
+    z-index: 2;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .swiper-slide{
+        margin-right: 17px;
+    }
+
+    .swiper-slide-active {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+}
+</style>

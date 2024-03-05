@@ -18,6 +18,10 @@
     background: linear-gradient(to right, #2B5049, #96B47A);
 }
 
+.gradien_2{
+    background: linear-gradient(to right, #D9EFC9, #A5D082);
+}
+
 .shadow_custom{
     box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.05);
 }

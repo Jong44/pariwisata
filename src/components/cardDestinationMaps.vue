@@ -41,7 +41,7 @@ export default {
 
 
 <template>
-    <div class="bg-[#E7E7E7] h-[18rem] rounded-3xl p-7 flex gap-32">
+    <div class="bg-[#E7E7E7] h-[18rem] rounded-3xl p-7 flex gap-32 cursor-pointer">
         <div class="w-[45%] h-full flex flex-col justify-between">
             <p class="font-bold text-2xl">{{ item.displayName }}</p>
             <div class="flex items-center gap-10">

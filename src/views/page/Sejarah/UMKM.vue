@@ -1,10 +1,12 @@
 <script>
 
-import axios from 'axios';
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useSwiper } from 'swiper/vue';
 import 'swiper/css';
 import { Navigation  } from 'swiper/modules';
+import axios from 'axios';
+
 export default{
     computed:{
         formatedKota() {
@@ -23,10 +25,10 @@ export default{
         return {
             dataKota: '',
             data: [
-                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2F%E2%80%94%20marba%201.png?alt=media&token=fdefee0d-97b9-4ae3-b49d-add40fbe3ad5',
-                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2FNight%20Vibes%201.png?alt=media&token=719215ae-e8d1-42a5-9d60-0e0d7f90a734',
-                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2FJogja%20istimewa%201.png?alt=media&token=49787352-64c7-4ec5-ae60-8cb84b8beabe',
-                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2FJogja%20istimewa%201.png?alt=media&token=49787352-64c7-4ec5-ae60-8cb84b8beabe'
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/kuliner%2FIMG20230527120315%201.png?alt=media&token=9284ff1e-0f28-4d60-9816-d7e3aba01abb',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/kuliner%2F2023-07-27%201.png?alt=media&token=34502915-1c9d-4b3e-929f-a34ba7279841',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/kuliner%2FTengkleng-Pak-Manto-via%201.png?alt=media&token=85f6d737-d8b4-459f-9a79-6f2cd781e933',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/kuliner%2F2022-05-15%2C%20Nasi%20Liwet%20Bu%20Wongso%20Lemu%2C%20Solo%20(DSC_3674)%201.png?alt=media&token=9926edac-5e04-440f-9af0-d24c939f7be6'
             ]
         }
     },
@@ -52,7 +54,7 @@ export default{
     <main>
         <section class="px-20 py-40  max-lg:px-10">
             <p class="font-bold text-3xl text-center max-sm:text-xl">
-                Tentukan Ide Hiburan Kamu Untuk <br class=" max-sm:hidden"/>Healing dan Refreshing
+                Bingung Mau Kulineran Tapi <br/> Tidak Tahu Tempatnya?
             </p>
             <div class="flex gap-10 mt-20 max-sm:flex-col">
                 <div class="p-10 h-[20rem] w-1/2 bg-primary_grey rounded-3xl flex justify-center items-end bg-center bg-cover bg-no-repeat max-sm:w-auto"  style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fpantai-watu-bale-kebumen-jawa-tengah.jpg?alt=media&token=a857241b-fa91-49b2-bf2f-46edbf1ae66d');">
@@ -60,26 +62,33 @@ export default{
                 </div>
                 <div class="w-1/2 max-sm:w-auto">
                     <p class="font-bold text-xl">
-                        Beragam ide liburan penuh keseruan ini menanti #DiJatengAja
+                        Destinasi Kuliner Akhir Pekan, yang Ada di Semarang
                     </p>
-                    <p class="mt-5">Liburan yang baik itu dimulai dari saat Anda merencanakannya. Jadi, untuk menikmati pesona Jawa Tengah, hal terbaik yang bisa Anda lakukan yaitu mempersiapkan diri untuk situasi baik atau kurang baik selama liburan. Meskipun Anda merasa aman dan sehat untuk menjelajahi keindahan tempat wisata di Indonesia, tidak ada salahnya untuk mengetahui beberapa info & tips ketika Anda mengunjungi tempat-tempat tertentu. Di sini, kami memiliki banyak informasi berguna yang dapat Anda gunakan. Ayo cek sekarang juga!</p>
+                    <p class="mt-5">Kota Semarang merupakan pilihan destinasi wisata yang menarik. Selain bisa menjelajahi banyak peninggalan kuno Belanda, berburu kuliner khas Semarang pun menarik dilakukan mengingat kota ini termasuk surganya kuliner lezat!
+Banyak makanan khas Kota Semarang yang wajib dicoba jika Anda berencana berkunjung ke sana, dari yang manis sampai gurih. Bisa dijadikan oleh-oleh untuk orang tercinta, loh!</p>
+                    <div class="bg-primary_greeen px-12 py-3 rounded-3xl mt-5 text-white w-max cursor-pointer">
+                        <p>Selengkapnya</p>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="h-[30rem] text-white bg-primary_grey flex flex-col justify-center items-center bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fbrynden-oIN4fV6DxAQ-unsplash.jpg?alt=media&token=591100eb-b5be-4f84-b6d7-d6417ad4b504');">
-            <p class="font-bold text-4xl">Gunung Sindoro</p>
-            <p class="mt-5 w-[30rem] text-center mb-10 max-sm:w-auto">Lokasi Embung Kledung berada di Kledung, Kec. Kledung, Kabupaten Temanggung, Jawa Tengah</p>
+        <section class="relative h-[30rem] text-white bg-primary_grey bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/sejarah%2FIMG-20200826-WA0015.jpg?alt=media&token=84dde982-cb0b-40b2-9850-d934dd53586a');">
+            <div class="absolute inset-0 bg-black opacity-[0.2]"></div>
+            <div class="absolute inset-0  flex flex-col justify-center items-center">
+                <p class="font-bold text-4xl">Wingko Babat Cap Kereta Api</p>
+                <p class="mt-5 w-[30rem] text-center mb-10 max-sm:w-auto">Makanan tradisional ini memiliki tekstur kenyal dengan rasa gurih dari kelapa parut</p>
+            </div>
         </section>
         <section class="px-20 py-24  max-lg:px-10">
             <div class="flex gap-24  max-lg:flex-col">
                 <div class="w-1/2  max-lg:w-auto">
-                    <p class="font-bold text-2xl">Rekomendasi Kota untuk Lewatkan Malam Pergantian Tahun</p>
-                    <p class="mt-10">Pergantian tahun biasanya jadi momen spesial. Apalagi kalau kamu merayakan tahun baru di beberapa kota ini, karena sudah disiapkan banyak acara seru juga, Sob. Berikut kota yang siap membuat momen pergantian tahun kamu berkesan,</p>
-                    <div class="flex flex-wrap gap-8 mt-10  max-lg:gap-5  max-lg:justify-center">
-                        <div class="bg-primary_grey rounded-3xl h-[10rem] w-[18rem] bg-center bg-no-repeat bg-cover" v-for="(item, index) in data" :key="index" :style="{backgroundImage: 'url('+ data[index] +')'}"></div>
+                    <p class="font-bold text-2xl">Rekomendasi Kuliner Solo Terenak dan Legendaris!</p>
+                    <p class="mt-10">Kuliner legendaris Solo enggak melulu sate, masih banyak makanan khas yang mungkin belum pernah kamu cicipi. Mulai dari timlo, leker gajahan, hingga soto segeer merupakan sederet kuliner Solo yang wajib kamu coba.</p>
+                    <div class="flex flex-wrap gap-8 mt-10  max-lg:gap-5  max-lg:justify-center ">
+                        <div class="bg-primary_grey rounded-3xl h-[10rem] w-[18rem] bg-center bg-cover bg-no-repeat" v-for="(item, index) in data" :key="index" :style="{backgroundImage: 'url('+ item +')'}"></div>
                     </div>
                 </div>
-                <div class="w-1/2 h-auto bg-primary_grey rounded-3xl  max-lg:h-[20rem] max-lg:w-auto bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2FCity%20Light%201.png?alt=media&token=ebe44bc9-7fed-4e5a-a306-883ee0d0280e');">
+                <div class="w-1/2 h-auto bg-primary_grey rounded-3xl  max-lg:h-[20rem] max-lg:w-auto bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/kuliner%2F2022-12-21%201.png?alt=media&token=3cefbb79-b5e6-44af-bc75-1050b17ed6d7');">
 
                 </div>
             </div>

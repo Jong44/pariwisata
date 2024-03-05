@@ -19,7 +19,7 @@ export default {
 
 
 <template>
-    <div class="bg-[#F5F5F5] w-full rounded-2xl">
+    <div class="bg-[#F5F5F5] w-full rounded-2xl cursor-pointer">
         <div class="h-[18rem] p-2">
             <div class="h-full bg-cover bg-center rounded-xl" :style="{ backgroundImage: 'url(' + image + ')' }">
             <!-- HEHHEHEHHEHEHE -->

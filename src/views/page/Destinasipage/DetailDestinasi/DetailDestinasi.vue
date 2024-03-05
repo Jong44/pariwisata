@@ -38,7 +38,7 @@ export default {
 
 <template>
     <main>
-        <div class="px-20 py-40">
+        <div class="px-20 py-40  max-lg:px-10">
             <div class="flex items-center gap-5 cursor-pointer w-max" @click="this.$router.go(-1);">
                 <i class="iconsax text-4xl" icon-name="arrow-left"></i>
                 <p>Kembali</p>
@@ -58,10 +58,10 @@ export default {
                             :position="m.location" @click="center = m.location"></GMapMarker>
                     </GMapMap>
                 </div>
-                <div class="mt-16 px-24">
+                <div class="mt-16 px-24  max-lg:px-10">
                     <div class="flex flex-col gap-10">
                         <div class="" v-for="(item, index) in listPlace" :key="index">
-                            <CardDestinationMaps :item="item" />
+                            <CardDestinationMaps :item="item"/>
                         </div>
                     </div>
                 </div>

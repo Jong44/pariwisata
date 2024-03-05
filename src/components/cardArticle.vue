@@ -18,7 +18,7 @@ export default {
 </script>
 
 <template>
-    <div class="article w-[25rem] shadow_custom rounded-xl m-1 bg-[#e7e7e7]">
+    <div class="article w-[25rem] shadow_custom rounded-xl m-1 bg-[#e7e7e7] max-sm:w-full max-sm:mt-10 max-lg:w-[20rem] cursor-pointer">
         <div class="h-[15rem] rounded-t-xl bg-center bg-cover bg-no-repeat" :style="{backgroundImage : 'url(' + image +')'}"></div>
         <div class="p-5 h-[8rem] flex flex-col justify-between">
            <div class="">

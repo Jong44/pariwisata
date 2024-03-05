@@ -4,9 +4,9 @@
 </script>
 
 <template>
-    <footer class=" bg-primary_greeen text-[#C2C2C2] w-full p-20" >
-        <div class="flex justify-between">
-            <div class="w-1/3">
+    <footer class=" bg-primary_greeen text-[#C2C2C2] w-full p-20 max-sm:p-10" >
+        <div class="flex justify-between max-sm:flex-col max-sm:gap-10">
+            <div class="w-1/3 max-sm:w-auto">
                 <img src="@/assets/logo.png" alt="">
                 <p class=" my-5">Jl. Imam Bonjol No.207, Pendrikan Kidul, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50131</p>
                 <div class="flex text-2xl gap-4">
