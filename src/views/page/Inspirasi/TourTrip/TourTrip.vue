@@ -80,7 +80,7 @@ export default {
                     <div class="mt-10">
                         <CardTour sizeText="30" title="Open Trip Wisata Liburan Karimun Jaya"
                         description="Paket wisata liburan di pulau karimun jawa, dengan harga ramah dikantong. Liburan ini..."
-                            image="https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/article%2Feugenia-clara-_QTeGT478_8-unsplash.jpg?alt=media&token=b903d953-c78c-4d32-a502-ed45658dfb30" />
+                            image="https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fkarimunjawa_169.jpeg?alt=media&token=699dd0c0-a118-4a04-9a8c-cbb43a42b932" />
                     </div>
                 </div>
                 <div class="w-[40%] max-lg:w-auto">
@@ -114,8 +114,8 @@ export default {
                 <p class="font-bold text-3xl">Pesan Trip Kamu Hanya <br />dengan 3 Cara</p>
                 <div class="mt-10 flex flex-col gap-10">
                     <div class="flex gap-7 max-lg:gap-5">
-                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
-
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem] flex justify-center items-center text-[#dddddd]">
+                            <i class="iconsax text-3xl" icon-name="calendar-add"></i>
                         </div>
                         <div class="flex flex-col">
                             <p class="font-bold">Pilih Destinasi</p>
@@ -124,28 +124,59 @@ export default {
                         </div>
                     </div>
                     <div class="flex gap-7 max-lg:gap-5">
-                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
-
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem] flex justify-center items-center text-[#dddddd]">
+                            <i class="iconsax text-3xl" icon-name="calendar-add"></i>
                         </div>
                         <div class="flex flex-col">
-                            <p class="font-bold">Pilih Destinasi</p>
+                            <p class="font-bold">Pembayaran</p>
                             <p class="max-lg:text-xs">Setelah menemukan wisata terbaik kamu, Siapkan pembayaranmu dan bersiap untuk
                                 berwisata</p>
                         </div>
                     </div>
                     <div class="flex gap-7 max-lg:gap-5">
-                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem]">
-
+                        <div class="w-[9rem] h-[5rem] bg-primary_greeen rounded-xl max-lg:w-[12rem] flex justify-center items-center text-[#dddddd]">
+                            <i class="iconsax text-3xl" icon-name="calendar-add"></i>
                         </div>
                         <div class="flex flex-col">
-                            <p class="font-bold">Pilih Destinasi</p>
+                            <p class="font-bold">Pilih Waktu Keberangkatanmu</p>
                             <p class="max-lg:text-xs">Setelah menemukan wisata terbaik kamu, Siapkan pembayaranmu dan bersiap untuk
                                 berwisata</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-[60%]"></div>
+            <div class="w-[60%] h-auto max-lg:w-auto max-lg:mt-10">
+                <div class="flex flex-col gap-10 justify-end items-end w-full h-full"> 
+                    <div class="w-[30rem] h-[8rem] bg-primary_greeen rounded-s-3xl">
+                        <div class="flex">
+                            <div class="rounded-s-3xl w-[15rem] h-[8rem] bg-primary_grey bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2Fhamzah-hanafi-ZEahg4W-SNU-unsplash.jpg?alt=media&token=8de18974-7b16-4695-91dc-599d12d32e8c');">
+                            </div>
+                            <div class="text-white p-5 text-sm mr-5">
+                                <p class="font-bold">Trip to :</p>
+                                <p class="font-bold">Kawah Sikidang</p>
+                                <p class="mt-2">14 - 16 Januari 2023</p>
+                            </div>
+                            <div class="bg-primary_yellow w-[1rem] h-[8rem]">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[35rem] h-[8rem] bg-primary_greeen rounded-s-3xl">
+                        <div class="flex">
+                            <div class="rounded-s-3xl w-[20rem] h-[8rem] bg-primary_grey bg-center bg-cover bg-no-repeat" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/tourtrip%2Fandri-hermawan-OFyRqzBh_a8-unsplash.jpg?alt=media&token=e13d5484-8cf2-425e-bd1d-fa720e6a77a9');">
+                            </div>
+                            <div class="text-white p-5 text-sm mr-5">
+                                <p class="font-bold">Trip to :</p>
+                                <p class="font-bold">Sindoro</p>
+                                <p class="mt-2">14 - 16 Januari 2023</p>
+                            </div>
+                            <div class="bg-primary_yellow w-[1rem] h-[8rem]">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="relative py-44 bg-primary_grey bg-center bg-cover bg-no-repeat text-white" style="background-image: url('https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fandri-hermawan-mZjSvUtky1A-unsplash.jpg?alt=media&token=1adf7d20-a80b-450a-9da8-01b7a4fafe90');">
             <div class="absolute inset-0 bg-black opacity-[0.2]"></div>

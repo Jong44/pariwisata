@@ -19,7 +19,7 @@ export default {
 <template>
     <nav class="absolute gradient top-0 right-0 left-0 z-10  py-10 px-20 text-white max-sm:px-10 max-lg:px-10">
         <div class="flex justify-between items-center">
-            <Logo />
+            <img src="@/assets/logo.png" alt="">
             <div class="flex gap-8 items-center text-lg max-sm:hidden max-lg:gap-2">
                 <router-link to="/">Beranda</router-link>
                 <Circle />
@@ -65,10 +65,14 @@ export default {
             <hr class=" bg-white" />
             <router-link to="/sejarah/kuliner">Sejarah | Kuliner</router-link>
             <hr class=" bg-white" />
+            <router-link to="/sejarah/bahasa">Sejarah | Bahasa</router-link>
+            <hr class=" bg-white" />
+            <router-link to="/sejarah/umkm">Sejarah | UMKM</router-link>
+            <hr class=" bg-white" />
         </div>
 
         <div v-show="showInspirasi"
-            class="bg-primary_greeen absolute right-[35rem] top-[6rem] w-[10rem] max-sm:hidden  max-lg:right-[14rem]">
+            class="bg-primary_greeen absolute right-[42rem] top-[6rem] w-[10rem] max-sm:hidden  max-lg:right-[14rem]">
             <div class="text-sm cursor-pointer"
                 @click="this.$router.push('/inspirasi/ideliburan'), showInspirasi = false">
                 <p class="m-2">Ide Liburan</p>
@@ -81,7 +85,7 @@ export default {
             </div>
         </div>
         <div v-show="showTourTrip"
-            class="bg-primary_greeen absolute right-[27rem] top-[6rem] w-[10rem] max-sm:hidden  max-lg:right-[6rem]">
+            class="bg-primary_greeen absolute right-[32rem] top-[6rem] w-[10rem] max-sm:hidden  max-lg:right-[6rem]">
             <div class="text-sm cursor-pointer"
                 @click="this.$router.push('/sejarah/warisanbudaya'), showTourTrip = false">
                 <p class="m-2">Warisan Budaya</p>
@@ -95,6 +99,16 @@ export default {
             <div class="text-sm mt-3 cursor-pointer"
                 @click="this.$router.push('/sejarah/kuliner'), showTourTrip = false">
                 <p class="m-2">Kuliner</p>
+                <hr class=" bg-white" />
+            </div>
+            <div class="text-sm mt-3 cursor-pointer"
+                @click="this.$router.push('/sejarah/bahasa'), showTourTrip = false">
+                <p class="m-2">Bahasa</p>
+                <hr class=" bg-white" />
+            </div>
+            <div class="text-sm mt-3 cursor-pointer"
+                @click="this.$router.push('/sejarah/umkm'), showTourTrip = false">
+                <p class="m-2">UMKM</p>
                 <hr class=" bg-white" />
             </div>
         </div>

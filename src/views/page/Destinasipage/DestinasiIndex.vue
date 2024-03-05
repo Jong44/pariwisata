@@ -3,7 +3,7 @@ import CardArticleLarge from '@/components/cardArticleLarge.vue';
 import ListArticleByCategory from '@/components/listArticleByCategory.vue';
 import Search from '@/components/search.vue';
 import axios from 'axios';
-import DataKota from '@/assets/data_kota.json'
+
 
 export default {
     components: {
@@ -32,13 +32,21 @@ export default {
     },
     data() {
         return {
-            dataKota: DataKota,
+            dataKota: '',
             indexCatergory: 0,
             currentPage: 1,
             perPage: 8,
             totalItems: 0,
             searchTerm: '',
-            article: ''
+            article: '',
+            kategori: [
+                'Pantai',
+                'Gunung',
+                'Kuliner',
+                'Curug',
+                'Cagar Alam',
+                'Lainnya',
+            ]
         }
     },
     methods: {
@@ -132,8 +140,8 @@ export default {
                 <div class="mt-24">
                     <p class="font-bold text-2xl">Categories</p>
                     <div class="mt-5 flex flex-col gap-3 text-xl">
-                        <div class="flex justify-between" v-for="index in 6">
-                            <p>Pantai</p>
+                        <div class="flex justify-between" v-for="index in kategori">
+                            <p>{{ index }}</p>
                             <p>(10)</p>
                         </div>
                     </div>

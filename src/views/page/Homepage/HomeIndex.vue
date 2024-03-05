@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useSwiper } from 'swiper/vue';
 import 'swiper/css';
 import { Navigation } from 'swiper/modules';
-import dataArticle from '@/assets/data_article.json'
 import axios from 'axios';
 
 
@@ -110,17 +109,17 @@ export default {
                 <div class="h-[22px] w-40 bg-primary_greeen max-sm:hidden"></div>
                 <div class=" px-10 py-9 flex items-center gap-2 shadow_custom ">
                     <i class="iconsax text-2xl text-primary_yellow" icon-name="location"></i>
-                    <p>Choose Location</p>
+                    <p>Kuliner</p>
                 </div>
                 <div class="h-[22px] w-[18.7rem] bg-primary_greeen max-sm:hidden"></div>
                 <div class=" px-10 py-9 flex items-center gap-2 shadow_custom">
                     <i class="iconsax text-2xl text-primary_yellow" icon-name="location"></i>
-                    <p>Pick Up Date</p>
+                    <p>Bahasa</p>
                 </div>
                 <div class="h-[22px] w-[18.7rem] bg-primary_greeen max-sm:hidden"></div>
                 <div class=" px-10 py-9 flex items-center gap-2 shadow_custom ">
                     <i class="iconsax text-2xl text-primary_yellow" icon-name="car"></i>
-                    <p>Book Your Car</p>
+                    <p>Warisan Budaya</p>
                 </div>
                 <div class="h-[22px] w-40 bg-primary_greeen max-sm:hidden"></div>
             </div>
@@ -186,29 +185,11 @@ export default {
             <p class="font-bold text-4xl text-center max-sm:text-xl">Solusi Cepat untuk Pemesanan <br /> Perjalanan</p>
             <div class="flex gap-44 mt-20 max-sm:block  max-lg:gap-10">
                 <div class="w-1/2 max-sm:w-auto">
-                    <p class="font-semibold text-2xl max-sm:text-lg">Lorem ipsum dolor sit amet consectetur. Mauris aliquet tellus ut
-                        amet neque dignissim. </p>
-                    <p class="text-[#d9d9d9] text-xl mt-2 max-sm:text-base">Lorem ipsum dolor sit amet consectetur. Non nulla suspendisse
-                        blandit rutrum dui sed morbi quam vestibulum. Leo purus morbi elementum nisi diam cursus sit
-                        nibh. Turpis sed quis eget molestie. Semper quis at leo nisl orci id habitasse ultrices. Nibh
-                        mauris lectus proin tincidunt amet massa eleifend ac laoreet. </p>
+                    <p class="font-semibold text-2xl max-sm:text-lg">Pesona Peninggalan Sejarah, Candi Borobuder Jadi Wisata yang Sering di Kunjungi</p>
+                    <p class="text-[#d9d9d9] text-xl mt-5 max-sm:text-base">Borobudur merupakan mahakarya seni rupa Buddha Indonesia, sebagai contoh puncak pencapaian keselarasan teknik arsitektur dan estetika seni rupa Buddha di Jawa.. Bangunan ini diilhami gagasan dharma dari India, antara lain stupa, dan mandala, tetapi dipercaya juga merupakan kelanjutan unsur lokal; struktur megalitik punden berundak atau piramida bertingkat yang ditemukan dari periode prasejarah Indonesia. Sebagai perpaduan antara pemujaan leluhur asli Indonesia dan perjuangan mencapai Nirwana dalam ajaran Buddha</p>
                     <div class="flex items-center gap-2 mt-5 font-bold text-primary_yellow">
                         <p>Read More</p>
                         <i class="iconsax text-xl " icon-name="arrow-right"></i>
-                    </div>
-                    <div class="flex gap-12 mt-20">
-                        <div class="font-bold text-white">
-                            <p class="text-5xl max-sm:text-xl">100+</p>
-                            <p class="text-xl max-sm:text-base">Artikel</p>
-                        </div>
-                        <div class="font-bold text-white">
-                            <p class="text-5xl max-sm:text-xl">50+</p>
-                            <p class="text-xl max-sm:text-base">User</p>
-                        </div>
-                        <div class="font-bold text-white">
-                            <p class="text-5xl max-sm:text-xl">20+</p>
-                            <p class="text-xl max-sm:text-base">Destinasi</p>
-                        </div>
                     </div>
                 </div>
                 <div class="w-1/2 h-[25rem] bg-primary_greeen rounded-3xl max-sm:hidden">

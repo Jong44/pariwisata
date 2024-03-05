@@ -31,7 +31,7 @@ export default {
         <div class="p-7">
             <p class="font-bold " :style="{fontSize: `${sizeText}px`}">{{ title }}</p>
             <p class="text-more my-3">{{ description }}</p>
-            <div class="bg-primary_greeen py-3 px-10 text-white w-max rounded-2xl cursor-pointer">
+            <div class="bg-primary_greeen py-3 px-10 text-white w-max rounded-2xl cursor-pointer" @click="this.$router.push('/inspirasi/tourtrip/detail/1')">
                 <p>View</p>
             </div>
         </div>

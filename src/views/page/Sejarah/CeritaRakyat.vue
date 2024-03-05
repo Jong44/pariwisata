@@ -1,15 +1,60 @@
 <script>
-
-
+import { defineComponent, ref } from 'vue';
+import CardTour from '@/components/cardTour.vue'
+import ListArticleByCategory from '@/components/listArticleByCategory.vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useSwiper } from 'swiper/vue';
 import 'swiper/css';
 import { Navigation  } from 'swiper/modules';
 export default{
-    components:{
+    components: {
+        CardTour,
+        ListArticleByCategory,
         Swiper,
         SwiperSlide
-    }
+    },
+    setup() {
+
+        const swiperInstance = ref()
+
+        function onSwiper(swiper) {
+            swiperInstance.value = swiper
+        }
+        const swiperNextSlide = () => {
+            swiperInstance.value.slideNext()
+        };
+        const swiperPrevSlide = () => {
+            swiperInstance.value.slidePrev()
+        };
+        return {
+            swiperPrevSlide,
+            swiperNextSlide,
+            onSwiper,
+        };
+    },
+    methods: {
+        Navigation() {
+            return Navigation
+        },
+    },
+    data() {
+        return {
+            indexCatergory: 0,
+            activeIndex: 0,
+            imageData: [
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fawan-aR_sT7qaQKM-unsplash.jpg?alt=media&token=b5a69389-39e1-4f19-8b83-4aeb1a7b3db6',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Falea-film-2lZlBv-TQI4-unsplash.jpg?alt=media&token=05ee63bf-8120-4f7c-b9e7-75689d9be631',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Fyulia-agnis-JXUJ88V8el8-unsplash.jpg?alt=media&token=e7a3f587-cd2c-4fa3-8b74-90a793a90a29',
+                'https://firebasestorage.googleapis.com/v0/b/pariwisata-1a79c.appspot.com/o/inpirasi%2Ftriadi-yusuf-qjVjjynm0C4-unsplash.jpg?alt=media&token=65d8a219-e640-4f87-a3be-1a72e81d47bc'
+            ],
+            titleData: [
+                'Kawah Sikidang',
+                'Candi Borobudur',
+                'Brown Canyon',
+                'Lawang Sewu'
+            ]
+        }
+    },
 }
 
 </script>
@@ -78,5 +123,69 @@ export default{
                 </div>
             </div>
         </section>
+        <section class="px-20 py-20 max-lg:px-10">
+            <p class="text-center font-bold text-3xl max-lg:text-xl">
+                Rekomendasi Cerita Rakyat <br /> di Jawa Tengah
+            </p>
+            <div class="mt-10">
+                <swiper ref="swiperRef" :breakpoints="{ 
+                    320: {
+                            slidesPerView: 1,
+                            spaceBetween: 0,
+                        },
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        800: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        900: { slidesPerView: 3, }
+                 }"
+                    :loop="true" :modules="[Navigation]" @swiper="onSwiper" centeredSlides  >
+                    <swiper-slide v-for="(item, index) in 4" :key="index" class="p-5">
+                        <div class="flex justify-center items-end p-10  shadow_custom bg-primary_grey h-[30rem] w-[26rem] max-lg:w-[16rem] rounded-3xl bg-center bg-cover bg-no-repeat" :style="{backgroundImage: 'url('+ imageData[index] +' )'}">
+                            <p class="text-white text-xl font-semibold">{{ titleData[index] }}</p>
+                        </div>
+                    </swiper-slide>
+                </swiper>
+            </div>
+            <div class="flex justify-center gap-5 my-5">
+                    <div class=" bg-primary_greeen font-bold px-3 py-1 rounded-full" @click="swiperPrevSlide">
+                        <i class="iconsax text-xl text-white" icon-name="arrow-left"></i>
+                    </div>
+                    <div class=" bg-primary_greeen font-bold px-3 py-1 rounded-full" @click="swiperNextSlide">
+                        <i class="iconsax text-xl text-white" icon-name="arrow-right"></i>
+                    </div>
+                </div>
+        </section>
     </main>
 </template>
+
+<style scoped>
+.swiper-slide{
+    transition: all .3s ease;
+    padding: 5rem  0;
+}
+
+.swiper-slide-active {
+    transform: scale(1.25);
+    z-index: 2;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .swiper-slide{
+        margin-right: 17px;
+    }
+
+    .swiper-slide-active {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+}
+</style>

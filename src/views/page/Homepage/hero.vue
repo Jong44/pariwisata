@@ -43,10 +43,10 @@ export default {
       
     </div>
     <div class="absolute right-0 bottom-0 rounded-s-3xl max-lg:hidden" >
-      <img src="@/assets/candi2.png" class="w-[20rem]" alt="">
+      <img src="@/assets/candi2.png" class="w-[21rem]" alt="">
     </div>
     <div class="absolute right-0 bottom-0 z-0 max-lg:hidden">
-      <img src="@/assets/candi.png" class="w-[30rem]" alt="">
+      <img src="@/assets/candi.png" class="w-[35rem]" alt="">
     </div>
   </section>
 </template>
